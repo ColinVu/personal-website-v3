@@ -1,6 +1,6 @@
 .App {
     text-align: center;
-    background-color: #FFDDDD;
+    background-color: #ffbead;
   }
   
   .App-logo {
@@ -27,13 +27,13 @@
   }
   
   .mainPage {
-    background-color: #FFDDDD;
+    background-color: #ffbead;
     font-family: "IBMPlexMono", sans-serif;
     height: 300vh;
   }
 
   .flyAway {
-    background-color: #FFDDDD;
+    background-color: #ffbead;
     font-family: "IBMPlexMono", sans-serif;
     animation: flyToTop 2s forwards;
   }
@@ -58,7 +58,7 @@
     text-align: center;
     font-weight: light;
     border-radius: 15px;
-    border: 1px solid #EEBBBB;
+    border: 1px solid #ff7f5f;
     box-sizing: border-box;
   }
   
@@ -76,6 +76,12 @@
     margin-bottom: 10px;
   }
   
+  .homePageRow1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .homePageRow2 {
     display: flex;
     flex-direction: row;
