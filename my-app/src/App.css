@@ -29,7 +29,7 @@
   .mainPage {
     background-color: #ffbead;
     font-family: "IBMPlexMono", sans-serif;
-    height: 300vh;
+    height: 100vh;
   }
 
   .flyAway {
@@ -162,16 +162,16 @@
         padding-bottom: 150%;
     }
     40% {
-        width: 11%;
-        padding-bottom: 11%;
+        width: 100px;
+        padding-bottom: 100px;
     }
-    70% {
-        width: 11%;
-        padding-bottom: 11%;
+    67% {
+      width: 100px;
+      padding-bottom: 100px;
     }
     75% {
-        width: 13%;
-        padding-bottom: 13%;
+      width: 120px;
+      padding-bottom: 120px;
     }
     100% {
         width: 0%;
