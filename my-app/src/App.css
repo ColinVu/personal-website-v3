@@ -1,5 +1,6 @@
 .App {
     text-align: center;
+    background-color: #FFDDDD;
   }
   
   .App-logo {
@@ -50,14 +51,15 @@
   
   .infoBubble {
     background-color: #FFFFFF;
-    width: 500px;
-    height: 100px;
+    max-width: 500px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     text-align: center;
     font-weight: light;
     border-radius: 15px;
     border: 1px solid #EEBBBB;
+    box-sizing: border-box;
   }
   
   .infoTitle {
@@ -71,6 +73,7 @@
     overflow-wrap: 'break-word';
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
   }
   
   .homePageRow2 {
