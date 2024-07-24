@@ -1,10 +1,12 @@
 import './App.css';
 import { iconMap } from "./assets";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import TypeWriterText from "./TypeWriterText.js";
 import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
 import { RiHomeLine } from "react-icons/ri";
+import { FiClipboard, FiCheck } from 'react-icons/fi';
+import Timeline from "./Timeline.js";
 
 function App() {
   const aboutMeText = "A brief overview of myself and my works! Links, interests, accomplishments, and more!";
@@ -18,8 +20,64 @@ function App() {
   const [animationActive, setAnimationActive] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [fly, setFly] = useState(false);
-
+  const [overlayVisible, setOverlayVisible] = useState(false);
+  const [isCopied, setCopied] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [currIcon, setCurrIcon] = useState("");
+  const [timelineVisible, setTimelineVisible] = useState(false);
+  const timelineRef = useRef(null);
+  const [timelineWidth, setTimelineWidth] = useState(0);
+
+  useEffect(() => {
+    scrollTop();
+
+    const handleScroll = () => {
+      const overlayPosition = window.innerHeight * 0.8;
+      const timelinePosition = window.innerHeight * 1.6;
+      if (window.scrollY >= overlayPosition) {
+        setOverlayVisible(true);
+      } else {
+        setOverlayVisible(false);
+      }
+      if (window.scrollY >= timelinePosition) {
+        setTimelineVisible(true);
+      } else {
+        setTimelineVisible(false);
+      }
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  useEffect(() => {
+    const updateTimelineWidth = () => {
+      if (timelineRef.current) {
+        setTimelineWidth(timelineRef.current.offsetWidth);
+      }
+    };
+  
+    updateTimelineWidth();
+  
+    window.addEventListener('resize', updateTimelineWidth);
+  
+    return () => {
+      window.removeEventListener('resize', updateTimelineWidth);
+    };
+  }, [timelineVisible]);
+
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 
   const handleImageHover = (event) => {
     const name = event.target.getAttribute('data-name');
@@ -62,29 +120,38 @@ function App() {
     await setAnimationActive(true);
   };
 
+  const handleMouseMove = (e) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  };
+
   const downloadResume = () => {
     window.open('/resume.pdf', '_blank');
   }
 
-  const viewHighlights = () => {
-    const totalScrollDistance = window.innerHeight * 1.1;
-  
-    const scrollingSpeed = 0.5;
-  
-    const scrollDuration = totalScrollDistance / scrollingSpeed;
+  const openGitHub = () => {
+    window.open('https://github.com/ColinVu', '_blank');
+  }
 
-    window.scrollBy({
+  const openLinkedIn = () => {
+    window.open('https://www.linkedin.com/in/colin-vu/', '_blank');
+  }
+
+  const viewHighlights = () => {
+    const totalScrollDistance = window.innerHeight;  
+    window.scrollTo({
       top: totalScrollDistance,
       left: 0,
       behavior: 'smooth'
     });
-    setTimeout(function() {
-      window.scrollBy({
-        top: -window.innerHeight * 0.1,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }, scrollDuration * 0.3);
+  }
+
+  const viewHighlightsPage2 = () => {
+    const totalScrollDistance = 2 * window.innerHeight;  
+    window.scrollTo({
+      top: totalScrollDistance,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
   const flying = () => {
@@ -106,6 +173,14 @@ function App() {
     }
   }, [animationActive]);
 
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      // Indicate the text was copied
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+    });
+  }
+
   return (
     <div>
       <div className={`mainPage ${fly ? 'flyAway' : ''}`}>
@@ -121,12 +196,24 @@ function App() {
             </div>
           </div>
           <div className="homePageRow2">
-            <img data-name="diary" src={iconMap.get('diary')} alt="About Me" onMouseEnter={handleImageHover} onMouseLeave={handleImageHoverStop} onClick={handleClick} />
-            <img data-name="wrench" src={iconMap.get('wrench')} alt="Projects" onMouseEnter={handleImageHover} onMouseLeave={handleImageHoverStop} onClick={handleClick} />
-            <img data-name="camera" src={iconMap.get('camera')} alt="Media" onMouseEnter={handleImageHover} onMouseLeave={handleImageHoverStop} onClick={handleClick} />
+            <div className="pageIcon">
+              <img data-name="diary" src={iconMap.get('diary')} alt="About Me" onMouseEnter={handleImageHover} onMouseLeave={handleImageHoverStop} onClick={handleClick} />
+              About Me
+            </div>
+            <div className="pageIcon">
+              <img data-name="wrench" src={iconMap.get('wrench')} alt="Projects" onMouseEnter={handleImageHover} onMouseLeave={handleImageHoverStop} onClick={handleClick} />
+              Projects
+            </div>
+            <div className="pageIcon">
+              <img data-name="camera" src={iconMap.get('camera')} alt="Media" onMouseEnter={handleImageHover} onMouseLeave={handleImageHoverStop} onClick={handleClick} />
+              Media
+            </div>
           </div>
           <div className="homePageRow3">
-            <img data-name="scroll" src={iconMap.get('scroll')} alt="Resume" onMouseEnter={handleImageHover} onMouseLeave={handleImageHoverStop} onClick={handleClick} />
+            <div className="pageIcon">
+              <img data-name="scroll" src={iconMap.get('scroll')} alt="Resume" onMouseEnter={handleImageHover} onMouseLeave={handleImageHoverStop} onClick={handleClick} />
+              Resume
+            </div>
           </div>
           <div className="homePageRow4" onClick={viewHighlights}>
             <div>
@@ -140,7 +227,7 @@ function App() {
       </div>
       <div className={`highlights1 ${fly ? 'flyAway' : ''}`}>
         <div className="mePhotoBox">
-          <img className="mePhoto" data-name="photo" src={iconMap.get('mePhoto')} alt="Photo of me" width="420px" height="550px"></img>
+          <img className="mePhoto" data-name="photo" src={iconMap.get('mePhoto')} alt="Photo of me"></img>
         </div>
         <div className="bigText">
           <div className="bigTextLine1">
@@ -179,19 +266,71 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="highlightOverlay">
-          <div className="centerArrow">
-            <div className="downArrow">
-              <div className="upsideDown">
-                ^
-              </div>
+        <div className="centerArrow">
+          <div className="downArrow">
+            <div className="upsideDown" onClick={viewHighlightsPage2}>
+              ^
             </div>
           </div>
-          <div className="highlightIcons">
-            <FiLinkedin size={80}/>
-            <FiGithub size={80}/>
-            <div className="emailText" style={{textDecoration: 'underline'}}>
-              colinhvu@gmail.com
+        </div>
+      </div>
+      <div className={`highlights2 ${fly ? 'flyAway' : ''}`}>
+        <div className="highlights2TopBox">
+          <div className="highlights2TopLeft">
+            <div>My life</div>
+            <div>in experience</div>
+          </div>
+          <div className="highlights2TopRight">
+            <div>
+              Java . Python . JavaScript . TypeScript
+            </div>
+            <div>
+              C++ . C . C# . HTML . CSS . MySQL
+
+            </div>
+            <div>
+              Assembly . PHP . Android XML . Bash
+            </div>
+          </div>
+        </div>
+        <div className="timelineBox">
+          <div className={`timeline ${timelineVisible ? 'visible' : ''}`} ref={timelineRef}>
+            <Timeline/>
+          </div>
+        </div>
+        {(timelineWidth < 1130) && (
+          <div className="rightArrow" >
+            <div className="right">
+              ^^^
+            </div>
+          </div>
+        )}
+        <div className="centerArrow2">
+          <div className="downArrow">
+            <div className="upsideDown" onClick={viewHighlightsPage2}>
+              ^
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={`highlightOverlay ${overlayVisible ? 'visible' : ''}`}>
+        <div className="highlightIcons">
+          <FiLinkedin style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openLinkedIn}/>
+          <FiGithub style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openGitHub}/>
+          <div
+            className="emailText icon-hover"
+            style={{ textDecoration: 'underline' }}
+            onClick={() => copyToClipboard('colinhvu@gmail.com')}
+          >
+            colinhvu@gmail.com
+            <div className="cursor-icon" style={{ top: mousePosition.y - 15, left: mousePosition.x + 15 }}>
+              {isCopied ? <FiCheck /> : <FiClipboard />}
+              {isCopied && (
+                <div className="copied" style={{ top: mousePosition.y - 15, left: mousePosition.x + 32 }}>
+                  Copied
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -202,7 +341,7 @@ function App() {
         </div>
       )}
       <div className="homeButton">
-        <RiHomeLine size={60}/>
+        <RiHomeLine style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={scrollTop}/>
       </div>
     </div>
   );

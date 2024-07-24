@@ -47,13 +47,72 @@
     font-style: normal;
   }
 
+  .cursor-icon {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    display: none;
+  }
+  
+  .icon-hover:hover .cursor-icon {
+    display: block;
+  }
+  
+  .copied{
+    position: fixed;
+    z-index: 9999;
+    font-size: 10px;
+    color: #0f114f;
+  }
+  
+  .show-copied {
+    display: block;
+  }
+  
+
   .homeButton {
     position: fixed;
     color: white;
     top: 20px;
     left: 20px;
+    z-index: 300;
   }
 
+  .highlightOverlay {
+    position: fixed;
+    top: 94vh;
+    left: -50vw;
+    z-index: 300;
+    width: 100%;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .highlightOverlay.visible {
+    top: 94vh;
+    left: 0vw;
+  }
+  
+  .highlightIcons {
+    position: absolute;
+    z-index: 600;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    margin-left: 3vh;
+    color: #0f114f;
+    gap: 2vh;
+  }
+
+  .emailText {
+    font-family: "Inter", sans-serif;
+    font-size: 2vh;
+    margin-top: 0.5vh;
+  }
+
+  .highlightOverlay.visible .emailText:hover {
+    cursor: pointer;
+  }
+  
   .mainPage {
     background-color: #ffbead;
     font-family: "IBMPlexMono", sans-serif;
@@ -88,7 +147,6 @@
     font-weight: light;
     border-radius: 15px;
     border: 1px solid #ff7f5f;
-    box-sizing: border-box;
   }
   
   .infoTitle {
@@ -97,6 +155,7 @@
   }
   
   .infoBody {
+    font-size: 15px;
     margin-top: 10px;
     font-weight: light;
     overflow-wrap: 'break-word';
@@ -104,11 +163,20 @@
     margin-right: 10px;
     margin-bottom: 10px;
   }
+
+  .pageIcon {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justifyContent: center;
+  }
   
   .homePageRow1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100px;
   }
 
   .homePageRow2 {
@@ -273,26 +341,28 @@
   .mePhoto {
     border-radius: 15px;
     border: 1px solid #ff7f5f;
+    width: 42vh;
+    height: 55vh;
   }
 
   .bigText {
     position: absolute;
     font-family: "Inter", sans-serif;
-    left: calc(50% - 450px);
-    top: calc(150vh - 415px);
+    left: calc(50% - 45vh);
+    top: calc(150vh - 41.5vh);
     width: 50%;
     height: 100vh;
     z-index: 100;
     font-weight: bold;
     color: white;
     -webkit-text-stroke: 1px #ff7f5f;
-    font-size: 128px;
+    font-size: 12.8vh;
     line-height: 1;
   }
 
   .descOverlay {
     position: absolute;
-    top: calc(150vh - 240px);
+    top: 126vh;
     z-index: 200;
     display: flex;
     flex-direction: row;
@@ -311,62 +381,59 @@
     flex-direction: column;
     font-family: "Inter", sans-serif;
     font-weight: normal;
-    font-size: 25px;
+    font-size: 2.5vh;
     background-color: white;
     border: 1px solid #ff7f5f;
-    border-radius: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 12px;
-    padding-right: 12px;
+    border-radius: 1.5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 1.2vh;
+    padding-right: 1.2vh;
     
   }
 
   .descItem1 {
-    margin-top: 130px;
-    margin-right: 200px;
-    margin-left: -100px;
-    width: 380px;
+    margin-top: 13vh;
+    margin-right: 20vh;
+    margin-left: -10vh;
+    width: 38vh;
   }
 
   .descItem2 {
-    margin-top: 70px;
-    margin-left: 10px;
-    width: 230px;
+    margin-top: 7vh;
+    margin-left: 1vh;
+    width: 23vh;
   }
 
   .descItem3 {
-    margin-top: 70px;
-    margin-left: 120px;
-    width: 220px;
+    margin-top: 7vh;
+    margin-left: 12vh;
+    width: 22vh;
   }
 
   .descItem4 {
-    margin-top: 20px;
-    margin-left: 30px;
-    width: 290px;
+    margin-top: -8vh;
+    margin-left: 3vh;
+    width: 29vh;
   }
 
   .descItem5 {
-    margin-top: 100px;
-    margin-left: 70px;
-    width: 280px;
+    margin-top: 7vh;
+    margin-left: 7vh;
+    width: 28vh;
   }
 
   .descItem6 {
-    margin-top: 100px;
-    margin-left: -20px;
-    width: 260px;
-  }
-
-  .highlightOverlay {
-    position: absolute;
-    top: 185vh;
-    z-index: 300;
-    width: 100%;
+    margin-top: 7vh;
+    margin-left: -2vh;
+    width: 26vh;
   }
 
   .centerArrow {
+    position: absolute;
+    top: 190vh;
+    z-index: 300;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -384,24 +451,118 @@
     -webkit-text-stroke: 1px #ff7f5f;
     font-family: "IBMPlexMono", sans-serif;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 5vh;
     z-index: 500;
   }
 
-  .highlightIcons {
-    position: absolute;
-    z-index: 600;
-    display: flex;
-    justify-content: left;
-    text-align: left;
-    margin-left: 50px;
-    margin-top: -50px;
-    color: #0f114f;
-    gap: 50px;
+  .highlights2 {
+    background-color: #ffbead;
+    height: 100vh;
   }
 
-  .emailText {
+  .highlights2TopBox {
+    top: 210vh;
+    height: 25%;
+  }
+
+  .highlights2TopLeft {
+    margin-top: 4vh;
+    margin-left: 10vh;
+    position: absolute;
     font-family: "Inter", sans-serif;
-    font-size: 25px;
-    margin-top: 20px;
+    width: 50%;
+    z-index: 100;
+    font-weight: bold;
+    color: white;
+    font-size: 5vw;
+    line-height: 1;
+    text-shadow: 
+      -0.1vh -0.1vh 0 #ff7f5f,  
+      0.1vh -0.1vh 0 #ff7f5f,
+      -0.1vh 0.1vh 0 #ff7f5f,
+      0.1vh 0.1vh 0 #ff7f5f,
+      0 -0.15vh 0 #ff7f5f,
+      0 0.15vh 0 #ff7f5f;
+  }
+
+  .highlights2TopRight {
+    position: absolute;
+    left: 50vw;
+    margin-top: 4vh;
+    font-family: "Inter", sans-serif;
+    width: 45%;
+    z-index: 100;
+    font-weight: bold;
+    color: white;
+    font-size: 2.2vw;
+    line-height: 1.5;
+    text-shadow: 
+      -0.1vh -0.1vh 0 #ff7f5f,  
+      0.1vh -0.1vh 0 #ff7f5f,
+      -0.1vh 0.1vh 0 #ff7f5f,
+      0.1vh 0.1vh 0 #ff7f5f,
+      0 -0.15vh 0 #ff7f5f,
+      0 0.15vh 0 #ff7f5f;
+  }
+
+  .timeline {
+    position: absolute;
+    top: 225vh;
+    left: -1500px;
+    z-index: 300;
+    width: 95%;
+    transition: left 1s ease-in-out;
+  }
+
+  .timeline.visible {
+    top: 225vh;
+    left: 0vw;
+  }
+  
+
+  .centerArrow2 {
+    position: absolute;
+    top: 290vh;
+    z-index: 300;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rightArrow {
+    position: fixed;
+    top: 230vh;
+    left: calc(100vw - 50px);
+    z-index: 300;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: rightBounce 2s infinite;
+    color: white;
+    -webkit-text-stroke: 1px #ff7f5f;
+    font-family: "IBMPlexMono", sans-serif;
+    font-weight: bold;
+    font-size: 5vh;
+    z-index: 500;
+  }
+
+  .right {
+    transform: rotate(90deg);
+  }
+
+  @keyframes rightBounce {
+    0%, 100% {
+      transform: translateX(10);
+    }
+    50% {
+      transform: translateX(-8px);
+    }
   }
