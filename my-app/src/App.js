@@ -264,6 +264,7 @@ function App() {
             <div className="descItem descItem6">
               <div>I'm a geography nerd.</div>
             </div>
+            <img className="descItem7" data-name="duck-laptop" src={iconMap.get('duckLaptop')} alt="duck with laptop icon"/>
           </div>
         </div>
         <div className="centerArrow">
@@ -286,7 +287,6 @@ function App() {
             </div>
             <div>
               C++ . C . C# . HTML . CSS . MySQL
-
             </div>
             <div>
               Assembly . PHP . Android XML . Bash

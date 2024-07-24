@@ -393,7 +393,7 @@
   }
 
   .descItem1 {
-    margin-top: 13vh;
+    margin-top: 8vh;
     margin-right: 20vh;
     margin-left: -10vh;
     width: 38vh;
@@ -412,21 +412,28 @@
   }
 
   .descItem4 {
-    margin-top: -8vh;
+    margin-top: -3vh;
     margin-left: 3vh;
     width: 29vh;
   }
 
   .descItem5 {
-    margin-top: 7vh;
+    margin-top: 5vh;
     margin-left: 7vh;
     width: 28vh;
   }
 
   .descItem6 {
-    margin-top: 7vh;
+    margin-top: 5vh;
     margin-left: -2vh;
     width: 26vh;
+  }
+
+  .descItem7 {
+    width: 128px;
+    height: 128px;
+    image-rendering: pixelated;
+    margin-left: 3vh;
   }
 
   .centerArrow {
