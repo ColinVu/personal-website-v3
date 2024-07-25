@@ -319,6 +319,7 @@ function App() {
       <div ref={highlightsP3} className={`highlights3 ${fly ? 'flyAway' : ''}`}>
         
       </div>
+      {!window.matchMedia("(orientation: portrait)").matches &&
         <div className={`highlightOverlay ${overlayVisible ? 'visible' : ''}`}>
           <div className="highlightIcons">
             <FiLinkedin style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openLinkedIn}/>
@@ -340,6 +341,7 @@ function App() {
             </div>
           </div>
         </div>
+      }
       {animationActive && (
         <div className="overlay">
           <div className="circle" style={circleStyle}></div>

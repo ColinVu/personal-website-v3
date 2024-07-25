@@ -375,11 +375,11 @@
 
   @media (max-width: 700px) {
     .descOverlay {
-      transform: scale(0.7);
+      transform: scale(0.5);
     }
     .mePhoto {
-      transform: scale(0.7);
-      margin-top: 1.5vh;
+      transform: scale(0.5);
+      margin-top: 3.5vh;
     }
   }
   
@@ -539,6 +539,7 @@
   .timeline.visible {
     left: 0vw;
   }
+  
 
   .centerArrow2 {
     position: absolute;
