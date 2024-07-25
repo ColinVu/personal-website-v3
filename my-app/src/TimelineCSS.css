@@ -34,6 +34,12 @@
 }
 
 .fullTimeline {
+  position: absolute; /* Ensure the container is fixed and does not affect other elements */
+  top: 0; /* Adjust as needed */
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  z-index: 100;
   font-family: "Inter", sans-serif;
   margin-top: calc(-280px + 25vh);
 }

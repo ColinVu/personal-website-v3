@@ -120,12 +120,6 @@
     transition: transform 0.3s ease;
   }
 
-  @media (max-width: 800px) {
-    .mainPage {
-      transform: scale(0.75);
-    }
-  }
-
   @media (max-width: 550px) {
     .mainPage {
       transform: scale(0.9);
@@ -387,21 +381,11 @@
 
   @media (max-width: 700px) {
     .descOverlay {
-      transform: scale(0.6);
+      transform: scale(0.7);
     }
     .mePhoto {
-      transform: scale(0.6);
-      margin-top: 3vh;
-    }
-  }
-
-  @media (max-width: 350px) {
-    .descOverlay {
-      transform: scale(0.35);
-    }
-    .mePhoto {
-      transform: scale(0.35);
-      margin-top: 3vh;
+      transform: scale(0.7);
+      margin-top: 1.5vh;
     }
   }
   
@@ -551,7 +535,7 @@
     top: 225vh;
     left: -1500px;
     z-index: 300;
-    width: 95%;
+    width: 100%;
     transition: left 1s ease-in-out;
   }
 
@@ -607,18 +591,6 @@
       transform: translateX(-8px);
     }
   }
-
-  /* @media (max-width: 900px) {
-    .tlcomp {
-      transform: scale(0.75);
-    }
-  }
-  
-  @media (max-width: 500px) {
-    .tlcomp {
-      transform: scale(0.55);
-    }
-  } */
 
   .highlights3 {
     background-color: #ffbead;
