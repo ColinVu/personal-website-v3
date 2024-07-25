@@ -26,6 +26,9 @@ function App() {
   const [currIcon, setCurrIcon] = useState("");
   const [timelineVisible, setTimelineVisible] = useState(false);
   const timelineRef = useRef(null);
+  const highlightsP1 = useRef(null);
+  const highlightsP2 = useRef(null);
+  const highlightsP3 = useRef(null);
   const [timelineWidth, setTimelineWidth] = useState(0);
 
   useEffect(() => {
@@ -137,21 +140,21 @@ function App() {
   }
 
   const viewHighlights = () => {
-    const totalScrollDistance = window.innerHeight;  
-    window.scrollTo({
-      top: totalScrollDistance,
-      left: 0,
-      behavior: 'smooth'
-    });
+    if (highlightsP1.current) {
+      highlightsP1.current.scrollIntoView({behavior: "smooth"});
+    }
   }
 
   const viewHighlightsPage2 = () => {
-    const totalScrollDistance = 2 * window.innerHeight;  
-    window.scrollTo({
-      top: totalScrollDistance,
-      left: 0,
-      behavior: 'smooth'
-    });
+    if (highlightsP2.current) {
+      highlightsP2.current.scrollIntoView({behavior: "smooth"});
+    }
+  }
+
+  const viewHighlightsPage3 = () => {
+    if (highlightsP3.current) {
+      highlightsP3.current.scrollIntoView({behavior: "smooth"});
+    }
   }
 
   const flying = () => {
@@ -225,19 +228,19 @@ function App() {
           </div>
         </div>
       </div>
-      <div className={`highlights1 ${fly ? 'flyAway' : ''}`}>
+      <div ref={highlightsP1} className={`highlights1 ${fly ? 'flyAway' : ''}`}>
         <div className="mePhotoBox">
           <img className="mePhoto" data-name="photo" src={iconMap.get('mePhoto')} alt="Photo of me"></img>
         </div>
-        <div className="bigText">
-          <div className="bigTextLine1">
-            I'm Colin.
-          </div>
-          <div className="bigTextLine2">
-            I'm a...
-          </div>
-        </div>
         <div className="descOverlay">
+          <div className="bigText">
+            <div className="bigTextLine1">
+              I'm Colin.
+            </div>
+            <div className="bigTextLine2">
+              I'm a...
+            </div>
+          </div>
           <div className="descColumn">
             <div className="descItem descItem1">
               <div>I'm an undergrad Computer</div>
@@ -275,7 +278,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className={`highlights2 ${fly ? 'flyAway' : ''}`}>
+      <div ref={highlightsP2} className={`highlights2 ${fly ? 'flyAway' : ''}`}>
         <div className="highlights2TopBox">
           <div className="highlights2TopLeft">
             <div>My life</div>
@@ -295,23 +298,26 @@ function App() {
         </div>
         <div className="timelineBox">
           <div className={`timeline ${timelineVisible ? 'visible' : ''}`} ref={timelineRef}>
-            <Timeline/>
+            <Timeline className="tlcomp"/>
           </div>
         </div>
-        {(timelineWidth < 1130) && (
+        {/* {(timelineWidth < 1100) && (
           <div className="rightArrow" >
             <div className="right">
-              ^^^
+              ^
             </div>
           </div>
-        )}
+        )} */}
         <div className="centerArrow2">
           <div className="downArrow">
-            <div className="upsideDown" onClick={viewHighlightsPage2}>
+            <div className="upsideDown" onClick={viewHighlightsPage3}>
               ^
             </div>
           </div>
         </div>
+      </div>
+      <div ref={highlightsP3} className={`highlights3 ${fly ? 'flyAway' : ''}`}>
+        
       </div>
 
       <div className={`highlightOverlay ${overlayVisible ? 'visible' : ''}`}>

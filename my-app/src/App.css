@@ -81,15 +81,15 @@
   .highlightOverlay {
     position: fixed;
     top: 94vh;
-    left: -50vw;
+    left: -120vw;
     z-index: 300;
     width: 100%;
     transition: left 0.3s ease-in-out;
   }
 
   .highlightOverlay.visible {
-    top: 94vh;
     left: 0vw;
+    top: 94vh;
   }
   
   .highlightIcons {
@@ -117,6 +117,19 @@
     background-color: #ffbead;
     font-family: "IBMPlexMono", sans-serif;
     height: 100vh;
+    transition: transform 0.3s ease;
+  }
+
+  @media (max-width: 800px) {
+    .mainPage {
+      transform: scale(0.75);
+    }
+  }
+
+  @media (max-width: 550px) {
+    .mainPage {
+      transform: scale(0.9);
+    }
   }
 
   .flyAway {
@@ -331,33 +344,33 @@
 
   .mePhotoBox {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    top: 21vh;
     position: relative;
     z-index: 1;
+    width: 100%;
+    justify-content: center;
   }
 
   .mePhoto {
     border-radius: 15px;
     border: 1px solid #ff7f5f;
-    width: 42vh;
-    height: 55vh;
+    width: 280px;
+    height: 350px;
   }
 
   .bigText {
     position: absolute;
     font-family: "Inter", sans-serif;
-    left: calc(50% - 45vh);
-    top: calc(150vh - 41.5vh);
-    width: 50%;
+    top: -125px;
+    margin-left: -230px;
     height: 100vh;
     z-index: 100;
     font-weight: bold;
     color: white;
     -webkit-text-stroke: 1px #ff7f5f;
-    font-size: 12.8vh;
+    font-size: 90px;
     line-height: 1;
+    transition: transform 0.3s ease;
   }
 
   .descOverlay {
@@ -369,6 +382,27 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  @media (max-width: 700px) {
+    .descOverlay {
+      transform: scale(0.6);
+    }
+    .mePhoto {
+      transform: scale(0.6);
+      margin-top: 3vh;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .descOverlay {
+      transform: scale(0.35);
+    }
+    .mePhoto {
+      transform: scale(0.35);
+      margin-top: 3vh;
+    }
   }
   
   .descColumn {
@@ -381,59 +415,59 @@
     flex-direction: column;
     font-family: "Inter", sans-serif;
     font-weight: normal;
-    font-size: 2.5vh;
+    font-size: 15px;
     background-color: white;
     border: 1px solid #ff7f5f;
-    border-radius: 1.5vh;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    padding-left: 1.2vh;
-    padding-right: 1.2vh;
+    border-radius: 9px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 7.2px;
+    padding-right: 7.2px;
     
   }
 
   .descItem1 {
-    margin-top: 8vh;
-    margin-right: 20vh;
-    margin-left: -10vh;
-    width: 38vh;
+    margin-top: 70px;
+    margin-right: 70px;
+    margin-left: -60px;
+    width: 228px;
   }
 
   .descItem2 {
-    margin-top: 7vh;
-    margin-left: 1vh;
-    width: 23vh;
+    margin-top: 42px;
+    margin-left: 6px;
+    width: 138px;
   }
 
   .descItem3 {
-    margin-top: 7vh;
-    margin-left: 12vh;
-    width: 22vh;
+    margin-top: 42px;
+    margin-left: 72px;
+    width: 132px;
   }
 
   .descItem4 {
-    margin-top: -3vh;
-    margin-left: 3vh;
-    width: 29vh;
+    margin-top: -18px;
+    margin-left: 90px;
+    width: 174px;
   }
 
   .descItem5 {
-    margin-top: 5vh;
-    margin-left: 7vh;
-    width: 28vh;
+    margin-top: 30px;
+    margin-left: 140px;
+    width: 168px;
   }
 
   .descItem6 {
-    margin-top: 5vh;
-    margin-left: -2vh;
-    width: 26vh;
+    margin-top: 30px;
+    margin-left: 125px;
+    width: 156px;
   }
 
   .descItem7 {
     width: 128px;
     height: 128px;
     image-rendering: pixelated;
-    margin-left: 3vh;
+    margin-left: 105px;
   }
 
   .centerArrow {
@@ -474,7 +508,7 @@
 
   .highlights2TopLeft {
     margin-top: 4vh;
-    margin-left: 10vh;
+    margin-left: 5vw;
     position: absolute;
     font-family: "Inter", sans-serif;
     width: 50%;
@@ -540,8 +574,8 @@
 
   .rightArrow {
     position: fixed;
-    top: 230vh;
-    left: calc(100vw - 50px);
+    top: 268vh;
+    left: 85vw;
     z-index: 300;
     display: flex;
     flex-direction: row;
@@ -557,7 +591,7 @@
     -webkit-text-stroke: 1px #ff7f5f;
     font-family: "IBMPlexMono", sans-serif;
     font-weight: bold;
-    font-size: 5vh;
+    font-size: 8vw;
     z-index: 500;
   }
 
@@ -572,4 +606,21 @@
     50% {
       transform: translateX(-8px);
     }
+  }
+
+  /* @media (max-width: 900px) {
+    .tlcomp {
+      transform: scale(0.75);
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .tlcomp {
+      transform: scale(0.55);
+    }
+  } */
+
+  .highlights3 {
+    background-color: #ffbead;
+    height: 100vh;
   }
