@@ -36,7 +36,7 @@ function App() {
 
     const handleScroll = () => {
       const overlayPosition = window.innerHeight * 0.8;
-      const timelinePosition = window.innerHeight * 1.6;
+      const timelinePosition = window.innerHeight * 1.8;
       if (window.scrollY >= overlayPosition) {
         setOverlayVisible(true);
       } else {

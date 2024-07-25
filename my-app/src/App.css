@@ -532,12 +532,17 @@
     z-index: 300;
     width: 100%;
     transition: left 1s ease-in-out;
-    overflow-y: hidden;
     height: 60vh;
   }
 
   .timeline.visible {
     left: 0vw;
+  }
+
+  @media screen and (orientation: portrait) {
+    .timeline {
+      overflow: hidden;
+    }
   }
   
 
