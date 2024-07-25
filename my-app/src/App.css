@@ -170,7 +170,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    justifyContent: center;
+    justify-content: center;
   }
   
   .homePageRow1 {
@@ -375,10 +375,11 @@
 
   @media (max-width: 700px) {
     .descOverlay {
-      transform: scale(0.85);
+      transform: scale(0.7);
     }
     .mePhoto {
-      transform: scale(0.85);
+      transform: scale(0.7);
+      margin-top: 1.5vh;
     }
   }
   
@@ -522,6 +523,7 @@
       0 -0.15vh 0 #ff7f5f,
       0 0.15vh 0 #ff7f5f;
   }
+  
 
   .timeline {
     position: absolute;
@@ -530,13 +532,13 @@
     z-index: 300;
     width: 100%;
     transition: left 1s ease-in-out;
+    overflow-y: hidden;
+    height: 60vh;
   }
 
   .timeline.visible {
-    top: 225vh;
     left: 0vw;
   }
-  
 
   .centerArrow2 {
     position: absolute;

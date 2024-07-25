@@ -185,7 +185,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div style={{overflowY: "hidden"}}>
       <div className={`mainPage ${fly ? 'flyAway' : ''}`}>
         <div className="homePageRows">
           <div className="homePageRow1">
@@ -319,28 +319,27 @@ function App() {
       <div ref={highlightsP3} className={`highlights3 ${fly ? 'flyAway' : ''}`}>
         
       </div>
-
-      <div className={`highlightOverlay ${overlayVisible ? 'visible' : ''}`}>
-        <div className="highlightIcons">
-          <FiLinkedin style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openLinkedIn}/>
-          <FiGithub style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openGitHub}/>
-          <div
-            className="emailText icon-hover"
-            style={{ textDecoration: 'underline' }}
-            onClick={() => copyToClipboard('colinhvu@gmail.com')}
-          >
-            colinhvu@gmail.com
-            <div className="cursor-icon" style={{ top: mousePosition.y - 15, left: mousePosition.x + 15 }}>
-              {isCopied ? <FiCheck /> : <FiClipboard />}
-              {isCopied && (
-                <div className="copied" style={{ top: mousePosition.y - 15, left: mousePosition.x + 32 }}>
-                  Copied
-                </div>
-              )}
+        <div className={`highlightOverlay ${overlayVisible ? 'visible' : ''}`}>
+          <div className="highlightIcons">
+            <FiLinkedin style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openLinkedIn}/>
+            <FiGithub style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openGitHub}/>
+            <div
+              className="emailText icon-hover"
+              style={{ textDecoration: 'underline' }}
+              onClick={() => copyToClipboard('colinhvu@gmail.com')}
+            >
+              colinhvu@gmail.com
+              <div className="cursor-icon" style={{ top: mousePosition.y - 15, left: mousePosition.x + 15 }}>
+                {isCopied ? <FiCheck /> : <FiClipboard />}
+                {isCopied && (
+                  <div className="copied" style={{ top: mousePosition.y - 15, left: mousePosition.x + 32 }}>
+                    Copied
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
       {animationActive && (
         <div className="overlay">
           <div className="circle" style={circleStyle}></div>

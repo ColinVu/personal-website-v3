@@ -2,7 +2,7 @@ import './TimelineCSS.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { iconMap } from "./assets";
 
-const Timeline = () => {
+const Timeline = ({timelineVisible}) => {
   const begin = "I learned my first language--JavaScript--when I was 8 years old. Across the next 10 years, I learned various languages such as Java, Python, and C#. I learned how to perform packet analysis in Splunk and how to create basic front-end development using PHP.";
   const gtText = "I began my student journey at Georgia Tech as a Computer Science major.";
   const crossToad = "I led a team to create my first app--a 2D scrolling game--using Java and Android Studio. The project used MVC architecture and Agile principles, and I created the sprite physics engine and most UI assets. I led weekly scrum meetings and diagramming sessions.";
@@ -75,7 +75,7 @@ const Timeline = () => {
   
   return (
     <div>
-      <div className="fullTimeline">
+      <div className={`fullTimeline ${timelineVisible ? 'visible' : ''}`}>
         <div className="mainLine">
           ________________________________________________
         </div>
