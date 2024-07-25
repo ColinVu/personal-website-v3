@@ -344,13 +344,14 @@
     border: 1px solid #ff7f5f;
     width: 280px;
     height: 350px;
+    transition: transform 0.2s ease;
   }
 
   .bigText {
     position: absolute;
     font-family: "Inter", sans-serif;
-    top: -125px;
-    margin-left: -230px;
+    top: -140px;
+    margin-left: -220px;
     height: 100vh;
     z-index: 100;
     font-weight: bold;
@@ -376,6 +377,9 @@
   @media (max-width: 700px) {
     .descOverlay {
       transform: scale(0.5);
+    }
+    .bigText {
+      top: -125px;
     }
     .mePhoto {
       transform: scale(0.5);
@@ -541,7 +545,7 @@
 
   @media screen and (orientation: portrait) {
     .timeline {
-      overflow: hidden;
+      overflow-y: hidden;
     }
   }
   
