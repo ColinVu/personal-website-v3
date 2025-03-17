@@ -22,7 +22,7 @@ const LightPage = () => {
   return (
     <div>
       <div className="lightText">
-        Through time and space
+        Through light and dark
       </div>
       <div style={{ display: "flex", gap: "10px" }}>
         {images.slice(0, loadedCount).map((src, index) => (
