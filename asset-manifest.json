@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.9e9343e0.css",
-    "main.js": "/static/js/main.68810769.js",
+    "main.css": "/static/css/main.c63a5393.css",
+    "main.js": "/static/js/main.aa411886.js",
     "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "static/media/photo_bw.jpg": "/static/media/photo_bw.ab658ee766271e6d25a8.jpg",
     "static/media/Inter-Bold.ttf": "/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
     "static/media/Inter-Light.ttf": "/static/media/Inter-Light.02850f28027788580733.ttf",
     "static/media/Inter-Regular.ttf": "/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
@@ -10,12 +11,12 @@
     "static/media/IBMPlexMono-Light.ttf": "/static/media/IBMPlexMono-Light.a21361968db7f557724b.ttf",
     "static/media/duck_laptop.gif": "/static/media/duck_laptop.f73a1c77942d83e3854a.gif",
     "index.html": "/index.html",
-    "main.9e9343e0.css.map": "/static/css/main.9e9343e0.css.map",
-    "main.68810769.js.map": "/static/js/main.68810769.js.map",
+    "main.c63a5393.css.map": "/static/css/main.c63a5393.css.map",
+    "main.aa411886.js.map": "/static/js/main.aa411886.js.map",
     "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e9343e0.css",
-    "static/js/main.68810769.js"
+    "static/css/main.c63a5393.css",
+    "static/js/main.aa411886.js"
   ]
 }
