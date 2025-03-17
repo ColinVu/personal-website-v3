@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url('../../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Light.ttf') format('truetype');
+  font-weight: light;
+  font-style: normal;
+}
+
+.pics {
+  position:absolute;
+  object-fit: cover;
+  user-select: none;
+}
+
+.timeimg1 {
+  width:45vh;
+  height:45vh;
+  left: 48vh;
+  top: 60vh;
+  z-index: 0;
+}
+.timeimg2 {
+  width:65vh;
+  height:43vh;
+  left:93vh;
+  top:30vh;
+  z-index: 1;
+}
+.timeimg3 {
+  width:50vh;
+  height:35vh;
+  left:2vh;
+  top:61vh;
+  z-index: 1;
+}
+.timeimg4 {
+  width:35vh;
+  height:32vh;
+  left:55vh;
+  top:30vh;
+  z-index: 1;
+}
+.timeimg5 {
+  width:41vh;
+  height:25vh;
+  left:117vh;
+  top:2vh;
+  z-index: 1;
+}
+.timeimg6 {
+  width:50vh;
+  height:32vh;
+  left:2vh;
+  top:26vh;
+  z-index: 1;
+}
+.timeimg7 {
+  width:40vh;
+  height:25vh;
+  left:74vh;
+  top:2vh;
+  z-index: 1;
+}
+
+.timeText {
+  font-family: "IBMPlexMono", sans-serif;
+  width: 65vh;
+  font-size: 9vh;
+  padding-left: 93vh;
+  padding-top: 51vh;
+  color: white;
+  z-index: 10;
+  user-select: none;
+}

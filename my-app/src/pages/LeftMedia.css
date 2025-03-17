@@ -1,0 +1,39 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.totalSide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-left:6vw;
+  height: 100vh; /* Full height of viewport */
+  overflow-y: auto; /* Allows vertical scrolling */
+  scrollbar-width: none; /* Hide scrollbar for a cleaner look */
+  -ms-overflow-style: none;
+}
+
+/* Scrollable left-side container */
+.scrolling-container {
+  width: 20vw; /* 30% of viewport width */
+}
+
+/* Hide scrollbar in Webkit browsers */
+.scrolling-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensures images take full width of the scrollable area */
+.scrolling-image {
+  width: 90%;
+  height: auto;
+  display: relative;
+  margin: 5%;
+}
+
+.imageBox {
+  margin-bottom:3vh;
+  border: 0.01rem solid white;
+}

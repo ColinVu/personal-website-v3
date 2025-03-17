@@ -1,0 +1,12 @@
+.cursorText {
+  position: fixed;
+  pointer-events: none; /* Prevents interfering with clicks */
+  transform: translate(-5%, -105%); /* Centers text relative to cursor */
+  color: white;
+  -webkit-text-stroke: 0.2px #000000;
+  font-family: "IBMPlexMono", sans-serif;
+  font-size: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+}

@@ -1,0 +1,48 @@
+.mediaPage {
+  background-color: #000;
+  height:100vh;
+  width:200vh;
+}
+
+.homeButton {
+  position: fixed;
+  color: white;
+  top: 20px;
+  left: 20px;
+  z-index: 300;
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Light.ttf') format('truetype');
+  font-weight: light;
+  font-style: normal;
+}
+
+.upperText {
+  font-family: "IBMPlexMono", sans-serif;
+  width: 60vh;
+  font-size: 9vh;
+  padding-left: 10vh;
+  color: white;
+  user-select: none;
+}
+
+.cursorText {
+  position: fixed;
+  pointer-events: none; /* Prevents interfering with clicks */
+  transform: translate(-5%, -105%); /* Centers text relative to cursor */
+  color: white;
+  -webkit-text-stroke: 0.2px #000000;
+  font-family: "IBMPlexMono", sans-serif;
+  font-size: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index:10;
+}
+
+
+* {
+  cursor: pointer !important;
+}

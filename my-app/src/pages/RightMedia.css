@@ -1,0 +1,28 @@
+.image-container {
+  margin:2vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 65vw; /* 2/3 of the viewport width */
+  height: 96vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  overflow: hidden;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  transition: opacity 0.25s ease-in-out;
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
