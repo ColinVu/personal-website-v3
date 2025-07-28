@@ -116,7 +116,10 @@ function Media() {
   // Function to extract EXIF data from an image
   const getImageMetadata = async (imagePath) => {
     try {
+      console.log(`Attempting to extract EXIF from: ${imagePath}`);
       const exif = await exifr.parse(imagePath);
+      console.log(`EXIF data for ${imagePath}:`, exif);
+      
       if (exif) {
         // Format date properly - convert Date object to string
         let formattedDate = 'Unknown';
@@ -144,7 +147,7 @@ function Media() {
           }
         }
 
-        return {
+        const metadata = {
           camera: exif.Make && exif.Model ? `${exif.Make} ${exif.Model}` : 'Unknown',
           aperture: exif.FNumber ? `f/${exif.FNumber}` : 'Unknown',
           focalLength: exif.FocalLength ? `${exif.FocalLength}mm` : 'Unknown',
@@ -152,11 +155,15 @@ function Media() {
           iso: exif.ISO ? `ISO ${exif.ISO}` : 'Unknown',
           dateTime: formattedDate
         };
+        
+        console.log(`Processed metadata for ${imagePath}:`, metadata);
+        return metadata;
       }
     } catch (error) {
       console.log(`Could not read EXIF data for ${imagePath}:`, error);
     }
-    return {
+    
+    const defaultMetadata = {
       camera: 'Unknown',
       aperture: 'Unknown',
       focalLength: 'Unknown',
@@ -164,6 +171,9 @@ function Media() {
       iso: 'Unknown',
       dateTime: 'Unknown'
     };
+    
+    console.log(`Returning default metadata for ${imagePath}:`, defaultMetadata);
+    return defaultMetadata;
   };
 
   // Load metadata for all images when photos view is opened
@@ -175,6 +185,7 @@ function Media() {
           const imagePath = `/mediaImages/${image}`;
           metadata[image] = await getImageMetadata(imagePath);
         }
+        console.log('Loaded metadata:', metadata);
         setImageMetadata(metadata);
       };
       loadMetadata();
@@ -204,7 +215,7 @@ function Media() {
   const renderMainView = () => (
     <div className="mediaContent">
       <div className="mediaImage">
-        <img src="/photoMe.jpg" width="10%" alt="mePhotoMedia" className="mediaPhotoOfMe" />
+        <img src="/photoMe.jpg" width="30%" alt="mePhotoMedia" className="mediaPhotoOfMe" />
       </div>
       
       <div className="mediaButtons">
@@ -232,6 +243,7 @@ function Media() {
   // Render individual photo with metadata
   const renderPhoto = (imageName) => {
     const metadata = imageMetadata[imageName];
+    console.log(`Rendering photo ${imageName} with metadata:`, metadata);
     
     if (!metadata) return (
       <div key={imageName} className="photoContainer">
