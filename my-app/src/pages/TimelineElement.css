@@ -1,0 +1,111 @@
+/* Font declarations */
+@font-face {
+  font-family: "Inter";
+  src: url('../assets/fonts/Inter/static/Inter-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url('../assets/fonts/Inter/static/Inter-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Light.ttf') format('truetype');
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url('../assets/fonts/Inter/static/Inter-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url('../assets/fonts/Inter/static/Inter-Light.ttf') format('truetype');
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url('../assets/fonts/Inter/static/Inter-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Global styles */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.timelineElementContainer {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.timelineElementDate {
+  font-family: "IBMPlexMono", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  font-weight: bold;
+  width: 25%;
+  flex-shrink: 0;
+  padding-right: 10px;
+}
+
+.timelineElementText {
+  font-family: "IBMPlexMono", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  font-weight: normal;
+  width: 75%;
+  flex-grow: 1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1000px) {
+  .timelineElementContainer {
+    flex-direction: column;
+    margin: 25px 0;
+  }
+  
+  .timelineElementDate {
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-right: 0;
+  }
+  
+  .timelineElementText {
+    width: 100%;
+    font-size: 14px;
+  }
+} 

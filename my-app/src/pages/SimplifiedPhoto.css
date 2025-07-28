@@ -1,0 +1,39 @@
+.simplifiedPhotoContainer {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.simplifiedPhoto {
+  border-radius: 0px;
+  border: 10px solid #ffffff;
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.tape1 {
+  position: absolute;
+  top: -15px;
+  left: -45px;
+  width: 150px;
+  height: 65px;
+  z-index: 2;
+  transform: rotate(-35deg);
+  opacity: 0.9;
+}
+
+.tape2 {
+  position: absolute;
+  bottom: -15px;
+  right: -45px;
+  width: 150px;
+  height: 65px;
+  z-index: 2;
+  transform: rotate(150deg);
+  opacity: 0.9;
+}
+

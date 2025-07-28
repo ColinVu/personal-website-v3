@@ -239,106 +239,7 @@ function Home() {
               Resume
             </div>
           </div>
-          <div className="homePageRow4" onClick={viewHighlights}>
-            <div>
-              Or view the highlights here!
-            </div>
-            <div className="upsideDown">
-              ^
-            </div>
-          </div>
         </div>
-      </div>
-      <div ref={highlightsP1} className={`highlights1 ${fly ? 'flyAway' : ''}`}>
-        <div className="mePhotoBox">
-          <img className="mePhoto" data-name="photo" src={iconMap.get('mePhoto')} alt="Photo of me"></img>
-        </div>
-        <div className="descOverlay">
-          <div className="bigText">
-            <div className="bigTextLine1">
-              I'm Colin.
-            </div>
-            <div className="bigTextLine2">
-              I'm a...
-            </div>
-          </div>
-          <div className="descColumn">
-            <div className="descItem descItem1">
-              <div>I'm an undergrad Computer</div>
-              <div>Science major at Georgia Tech.</div>
-            </div>
-            <div className="descItem descItem2">
-              <div>I'm a photographer.</div>
-            </div>
-            <div className="descItem descItem3">
-              <div>I'm a designer and</div>
-              <div>a visual artist.</div>
-            </div>
-          </div>
-          <div className="descColumn">
-            <div className="descItem descItem4">
-              <div>I'm a full-stack software</div>
-              <div>developer.</div>
-            </div>
-            <div className="descItem descItem5">
-              <div>I'm a research assistant</div>
-              <div>in the Friendly</div>
-              <div>Cities Research Lab.</div>
-            </div>
-            <div className="descItem descItem6">
-              <div>I'm a geography nerd.</div>
-            </div>
-            <img className="descItem7" data-name="duck-laptop" src={iconMap.get('duckLaptop')} alt="duck with laptop icon"/>
-          </div>
-        </div>
-        <div className="centerArrow">
-          <div className="downArrow">
-            <div className="upsideDown" onClick={viewHighlightsPage2}>
-              ^
-            </div>
-          </div>
-        </div>
-      </div>
-      <div ref={highlightsP2} className={`highlights2 ${fly ? 'flyAway' : ''}`}>
-        <div className="highlights2TopBox">
-          <div className="highlights2TopLeft">
-            <div>My life</div>
-            <div>in experience</div>
-          </div>
-          <div className="highlights2TopRight">
-            <div>
-              Java . Python . JavaScript . TypeScript
-            </div>
-            <div>
-              C++ . C . C# . HTML . CSS . MySQL
-            </div>
-            <div>
-              Assembly . PHP . Android XML . Bash
-            </div>
-          </div>
-        </div>
-        <div className="timelineBox">
-          <div className={`timeline ${timelineVisible ? 'visible' : ''}`} ref={timelineRef}>
-            <Timeline className="tlcomp"/>
-          </div>
-        </div>
-        {/* {(timelineWidth < 1100) && (
-          <div className="rightArrow" >
-            <div className="right">
-              ^
-            </div>
-          </div>
-        )} */}
-        <div className="centerArrow2">
-          <div className="downArrow">
-            <div className="upsideDown" onClick={viewHighlightsPage3}>
-              ^
-            </div>
-          </div>
-        </div>
-      </div>
-      <div ref={highlightsP3} className={`highlights3 ${fly ? 'flyAway' : ''}`}>
-        <Construction/>
       </div>
       {!window.matchMedia("(orientation: portrait)").matches &&
         <div className={`highlightOverlay ${overlayVisible ? 'visible' : ''}`}>
@@ -363,6 +264,7 @@ function Home() {
           </div>
         </div>
       }
+
       {animationActive && (
         <div className="overlay">
           <div className="circle" style={circleStyle}></div>

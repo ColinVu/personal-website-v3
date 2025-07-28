@@ -1,0 +1,237 @@
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nothing+You+Could+Do&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+
+
+/* Font declarations from original AboutMe.css */
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "IBMPlexMono";
+    src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+@font-face {
+  font-family: "Inter";
+  src: url('../assets/fonts/Inter/static/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url('../assets/fonts/Inter/static/Inter-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url('../assets/fonts/Inter/static/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Global styles */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.aboutMeSimplifiedPage {
+  background-color: #f8f8f8;
+  background-image: 
+    linear-gradient(90deg, transparent 10%, #ffaaaa 10%, #ffaaaa calc(10% + 1px), transparent calc(10% + 1px)),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 29px,
+      #bcd2eb 29px,
+      #bcd2eb 30px
+    );
+  min-height: 100vh;
+  padding: 30px 0;
+}
+
+.aboutMeSimplifiedPage .homeButton {
+  position: fixed;
+  color: #333;
+  top: 20px;
+  left: 20px;
+  z-index: 300;
+}
+
+.simplifiedContent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.simplifiedLeftBox {
+  width: 40%;
+  min-height: 100vh;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.simplifiedRightBox {
+  width: 60%;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+
+
+
+.simplifiedLines {
+  width: 95%;
+}
+
+.simplifiedLine {
+  font-family: "IBMPlexMono";
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 10px;
+  margin-left: 20%;
+  line-height: 20px;
+  padding: 0;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.simplifiedLineBold {
+    font-family: "IBMPlexMono";
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    margin-left: 20%;
+    line-height: 20px;
+    padding: 0;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+.simplifiedPhoto {
+    transform: rotate(5deg);
+}
+
+.simplifiedTimeline {
+  padding-left: 0px;
+  width: 95%;
+}
+
+/* Timeline elements styling to match original */
+.simplifiedTimeline .timeline-element {
+  margin-bottom: 30px;
+}
+
+/* Media query for responsive design */
+@media (max-width: 1000px) {
+  .simplifiedContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .simplifiedLeftBox {
+    width: 100%;
+    min-height: auto;
+    overflow: visible;
+  }
+  
+  .simplifiedRightBox {
+    width: 100%;
+  }
+  
+
+  
+  
+  
+  .simplifiedLine {
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 12px;
+  }
+  
+  .simplifiedLineBold {
+    font-size: 24px;
+    line-height: 22px;
+    margin-bottom: 12px;
+  }
+  
+  .aboutMeSimplifiedPage {
+    background-image: 
+      linear-gradient(90deg, transparent 10%, #ffaaaa 10%, #ffaaaa calc(10% + 1px), transparent calc(10% + 1px)),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 27px,
+        #bcd2eb 27px,
+        #bcd2eb 28px
+      );
+  }
+}
+
+@media (max-width: 600px) {
+  .simplifiedContent {
+    padding: 0 10px;
+  }
+  
+  .simplifiedLeftBox,
+  .simplifiedRightBox {
+    padding: 20px 10px;
+  }
+
+  .simplifiedRightBox {
+    margin-left: 10%;
+  }
+  
+  .simplifiedLine {
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .simplifiedLineBold {
+    font-size: 22px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  .aboutMeSimplifiedPage {
+    background-image: 
+      linear-gradient(90deg, transparent 10%, #ffaaaa 10%, #ffaaaa calc(10% + 1px), transparent calc(10% + 1px)),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 25px,
+        #bcd2eb 25px,
+        #bcd2eb 26px
+      );
+  }
+} 

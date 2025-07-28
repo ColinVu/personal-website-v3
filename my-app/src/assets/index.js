@@ -6,6 +6,7 @@ import mePhoto from './images/photo_bw.jpg';
 import duckFlying from './images/duck_flying.png';
 import duckLaptop from './images/duck_laptop.gif';
 import forkliftIcon from './images/forklift.png';
+import tapeIcon from './images/tape.png';
 
 const iconMap = new Map();
 iconMap.set('diary', diaryIcon);
@@ -16,5 +17,6 @@ iconMap.set('mePhoto', mePhoto);
 iconMap.set('duckFlying', duckFlying);
 iconMap.set('duckLaptop', duckLaptop);
 iconMap.set('forklift', forkliftIcon);
+iconMap.set('tape', tapeIcon);
 
 export {iconMap};

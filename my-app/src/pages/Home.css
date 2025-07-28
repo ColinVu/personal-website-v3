@@ -80,25 +80,18 @@
 
   .highlightOverlay {
     position: fixed;
-    top: 94vh;
-    left: -120vw;
+    bottom: 10vh;
     z-index: 300;
     width: 100%;
-    transition: left 0.3s ease-in-out;
-  }
-
-  .highlightOverlay.visible {
-    left: 0vw;
-    top: 94vh;
   }
   
   .highlightIcons {
     position: absolute;
     z-index: 600;
     display: flex;
-    justify-content: left;
-    text-align: left;
-    margin-left: 3vh;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
     color: #0f114f;
     gap: 2vh;
   }

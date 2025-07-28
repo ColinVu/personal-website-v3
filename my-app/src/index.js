@@ -15,3 +15,16 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// Register service worker for image caching
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', () => {
+//     navigator.serviceWorker.register('/sw.js')
+//       .then((registration) => {
+//         console.log('Service Worker registered successfully:', registration);
+//       })
+//       .catch((error) => {
+//         console.log('Service Worker registration failed:', error);
+//       });
+//   });
+// }
