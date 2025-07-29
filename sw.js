@@ -34,6 +34,18 @@ self.addEventListener('install', (event) => {
 
 // Fetch event - serve from cache if available
 self.addEventListener('fetch', (event) => {
+  // Handle navigation requests (HTML pages)
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .catch(() => {
+          // If the request fails (404), return the index.html
+          return caches.match('/index.html');
+        })
+    );
+    return;
+  }
+  
   // Only handle image requests
   if (event.request.destination === 'image') {
     event.respondWith(
