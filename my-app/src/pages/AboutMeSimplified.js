@@ -25,12 +25,13 @@ function AboutMeSimplified() {
           
           <div className="simplifiedLines">
             <div className="simplifiedLineBold" style={{fontSize: "30px"}}>Colin Vu</div>
-            <div className="simplifiedLineBold">• cs @ georgia tech</div>
+            <div className="simplifiedLineBold">• computer science @ georgia tech</div>
             <div className="simplifiedLine" style={{fontSize: "15px"}}>media & computer simulation</div>
             <div className="simplifiedLine" style={{fontSize: "15px"}}>industrial design minor</div>
-            <div className="simplifiedLine" style={{fontSize: "15px"}}>duck enthusiast</div>
-            <div className="simplifiedLine" style={{fontSize: "15px"}}>professional amateur photographer</div>
             <div className="simplifiedLine" style={{fontSize: "15px"}}>founding engineer @ <a style={{marginLeft: "8px"}} href="https://seraphineglass.com" target="_blank" rel="noopener noreferrer"> seraphine glass</a></div>
+            <div className="simplifiedLine" style={{fontSize: "15px"}}>duck enthusiast</div>
+            <div className="simplifiedLine" style={{fontSize: "15px"}}>professional amateur <a style={{marginLeft: "8px"}} href="/media" target="_blank" rel="noopener noreferrer"> photographer</a></div>
+            <div className="simplifiedLine" style={{fontSize: "15px"}}>budget travel addict</div>
 
             <div className="simplifiedLineBold" style={{fontSize: "15px"}}>Java • Python • JavaScript • TypeScript • C++ • C# • C • HTML • CSS • MySQL • Swift</div>
             <div className="simplifiedLineBold" style={{fontSize: "15px"}}>React • Node • LangChain • PyTorch • Pandas • NumPy • OpenCV • Whisper • Pixi • Scikit-Learn • Junit • TailwindCSS</div>
@@ -49,25 +50,30 @@ function AboutMeSimplified() {
               date="aug 2022"
               text="arrived at georgia tech"
             />
-            
+
+            <TimelineElement 
+              date="june 2023 -> aug 2023"
+              text='i taught <a href="https://www.linkedin.com/company/galileo-learning/" target="_blank" rel="noopener noreferrer">engineering classes</a> to small children it was pretty fun'
+            />
+
             <TimelineElement 
               date="aug 2023 -> dec 2024"
-              text="vip research"
+              text="climate innovations research group @ GTRI. worked on a project using satellite data analysis models to monitor cropland conditions in ukraine. also worked on a project identifying weighted vehicle miles (VMT) in atlanta"
             />
 
             <TimelineElement 
               date="may 2024 -> aug 2024"
-              text="intern"
+              text='software engineering intern @ <a href="https://www.linkedin.com/company/american-gaming-systems" target="_blank" rel="noopener noreferrer">american gaming systems</a> building an internal tool to allow users to dynamically and iteratively create low/no code slot machine games ready to ship to casinos'
             />
 
             <TimelineElement 
               date="march 2024 -> may 2024"
-              text="research at friendly cities"
+              text='programmatically compiling datasets to help researchers identify socioeconomic outliers in geospatial data with the <a href="https://friendlycities.gatech.edu/" target="_blank" rel="noopener noreferrer">friendly cities research lab</a>'
             />
 
             <TimelineElement 
               date="april 2024 -> present"
-              text="founding engineer @ seraphine glass"
+              text='founding engineer @ <a href="https://www.seraphineglass.com/" target="_blank" rel="noopener noreferrer">seraphine glass</a> building augmented reality glasses with a seamlessly integrated advanced remembrance agent / lifestyle manager'
             />
 
 

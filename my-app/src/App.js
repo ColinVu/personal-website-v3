@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Media from "./pages/Media";
 import Projects from "./pages/Projects";
@@ -15,6 +15,7 @@ function App() {
         <Route path="/projects" element={<Projects/>} />
         {/* {<Route path="/aboutme" element={<AboutMe/>} />} */}
         <Route path="/aboutme" element={<AboutMeSimplified/>} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

@@ -7,9 +7,10 @@ const TimelineElement = ({ date, text }) => {
       <div className="timelineElementDate">
         {date}
       </div>
-      <div className="timelineElementText">
-        {text}
-      </div>
+      <div 
+        className="timelineElementText"
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
     </div>
   );
 };

@@ -1,7 +1,11 @@
 .App {
     text-align: center;
-    background-color: #ffbead;
   }
+
+/* Override global black background for home page */
+body {
+  background-color: #ffbead;
+}
   
   .App-logo {
     height: 40vmin;
