@@ -58,22 +58,22 @@ function AboutMeSimplified() {
 
             <TimelineElement 
               date="aug 2023 -> dec 2024"
-              text="climate innovations research group @ GTRI. worked on a project using satellite data analysis models to monitor cropland conditions in ukraine. also worked on a project identifying weighted vehicle miles (VMT) in atlanta"
+              text="climate innovations research group @ georgia tech research institute. worked on a project using satellite data analysis models to monitor cropland conditions in ukraine. also worked on a project identifying weighted vehicle miles (VMT) in atlanta"
             />
 
             <TimelineElement 
               date="may 2024 -> aug 2024"
-              text='software engineering intern @ <a href="https://www.linkedin.com/company/american-gaming-systems" target="_blank" rel="noopener noreferrer">american gaming systems</a> building an internal tool to allow users to dynamically and iteratively create low/no code slot machine games ready to ship to casinos'
+              text='software engineering intern @ <a href="https://www.linkedin.com/company/american-gaming-systems" target="_blank" rel="noopener noreferrer">american gaming systems</a>, built an internal tool to allow users to dynamically and iteratively create low/no code slot machine games ready to ship to casinos'
             />
 
             <TimelineElement 
-              date="march 2024 -> may 2024"
+              date="jan 2024 -> present"
               text='programmatically compiling datasets to help researchers identify socioeconomic outliers in geospatial data with the <a href="https://friendlycities.gatech.edu/" target="_blank" rel="noopener noreferrer">friendly cities research lab</a>'
             />
 
             <TimelineElement 
               date="april 2024 -> present"
-              text='founding engineer @ <a href="https://www.seraphineglass.com/" target="_blank" rel="noopener noreferrer">seraphine glass</a> building augmented reality glasses with a seamlessly integrated advanced remembrance agent / lifestyle manager'
+              text='founding engineer @ <a href="https://www.seraphineglass.com/" target="_blank" rel="noopener noreferrer">seraphine glass</a> building augmented reality glasses with a seamlessly integrated remembrance agent / lifestyle manager'
             />
 
 
