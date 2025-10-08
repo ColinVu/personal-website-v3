@@ -67,13 +67,13 @@ function AboutMeSimplified() {
             />
 
             <TimelineElement 
-              date="jan 2024 -> present"
-              text='programmatically compiling datasets to help researchers identify socioeconomic outliers in geospatial data with the <a href="https://friendlycities.gatech.edu/" target="_blank" rel="noopener noreferrer">friendly cities research lab</a>'
+              date="april 2025 -> aug 2025"
+              text='founding engineer @ <a href="https://www.seraphineglass.com/" target="_blank" rel="noopener noreferrer">seraphine glass</a>, built augmented reality glasses with a seamlessly integrated remembrance agent / lifestyle manager. raised $155k in pre-seed'
             />
 
             <TimelineElement 
-              date="april 2024 -> present"
-              text='founding engineer @ <a href="https://www.seraphineglass.com/" target="_blank" rel="noopener noreferrer">seraphine glass</a> building augmented reality glasses with a seamlessly integrated remembrance agent / lifestyle manager'
+              date="jan 2024 -> present"
+              text='programmatically compiling datasets to help researchers identify socioeconomic outliers in geospatial data with the <a href="https://friendlycities.gatech.edu/" target="_blank" rel="noopener noreferrer">friendly cities research lab</a>'
             />
 
 

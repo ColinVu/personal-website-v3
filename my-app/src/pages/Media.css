@@ -172,6 +172,14 @@ html, body {
   border-radius: 4px;
   backdrop-filter: blur(10px);
   z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.photoWrapper:hover .photoMetadata {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Scrollbar Styling - Make it more visible */

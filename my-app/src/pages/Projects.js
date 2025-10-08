@@ -43,6 +43,31 @@ const projects = [
 //     ]
 //   },
   {
+    id: 'the-kick-is-good',
+    image: '/projectImages/kickfootball.jpg',
+    title: 'The Kick is Good',
+    minititle: 'The Kick is Good',
+    date: 'August 2025 (🏆 HackGT12 Winner 🏆)',
+    links: [
+      { name: 'Devpost', url: 'https://devpost.com/software/the-kick-is-good' },
+      { name: 'GitHub', url: 'https://github.com/ColinVu/FGtracking' },
+      { name: 'Video', url: 'https://youtu.be/Ugg36PxM_qI' }
+    ],
+    description: `
+      Built a program to track a football during broadcast footage of field goal to find the exact height and distance throughout its trajectory.
+      <br>
+      <ul>
+        <li>Used <strong>CSRT</strong> to smartly interpolate object positioning</li>
+        <li>Added <strong>Kalman filtering</strong> as well to smooth the motion for accuracy</li>
+        <li>Developed a <strong>homography</strong> algorithm to extrapolate 3D coordinates from 2D footage</li>
+        <li>Auto-detects thousands of features and uses them to adjust for changes in camera zoom</li>
+      </ul>
+    `,
+      images: [
+      '/projectImages/kickvid.gif',
+    ]
+  },
+  {
     id: 'big-daddy',
     image: '/projectImages/bigdaddy.png',
     title: 'Big Daddy: AI-Powered Parental Controls',
