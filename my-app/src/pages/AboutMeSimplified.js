@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { RiHomeLine } from "react-icons/ri";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { SiDevpost } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 import { iconMap } from "../assets";
 import './AboutMeSimplified.css';
@@ -13,6 +15,18 @@ function AboutMeSimplified() {
     navigate("/");
   }
 
+  const openGitHub = () => {
+    window.open('https://github.com/ColinVu', '_blank');
+  }
+
+  const openLinkedIn = () => {
+    window.open('https://www.linkedin.com/in/colin-vu/', '_blank');
+  }
+
+  const openDevpost = () => {
+    window.open('https://devpost.com/colinhvu', '_blank');
+  }
+
   return (
     <div className="aboutMeSimplifiedPage">
       <div className="homeButton">
@@ -24,19 +38,24 @@ function AboutMeSimplified() {
           <SimplifiedPhoto className="simplifiedPhoto"/>
           
           <div className="simplifiedLines">
-            <div className="simplifiedLineBold" style={{fontSize: "30px"}}>Colin Vu</div>
-            <div className="simplifiedLineBold">• computer science @ georgia tech</div>
+            <div className="simplifiedLineBold" style={{fontSize: "30px"}}>Hi, I'm Colin</div>
+            <div className="simplifiedLineBold">computer science @ georgia tech</div>
             <div className="simplifiedLine" style={{fontSize: "15px"}}>media & computer simulation</div>
             <div className="simplifiedLine" style={{fontSize: "15px"}}>industrial design minor</div>
-            <div className="simplifiedLine" style={{fontSize: "15px"}}>founding engineer @ <a style={{marginLeft: "8px"}} href="https://seraphineglass.com" target="_blank" rel="noopener noreferrer"> seraphine glass</a></div>
             <div className="simplifiedLine" style={{fontSize: "15px"}}>duck enthusiast</div>
-            <div className="simplifiedLine" style={{fontSize: "15px"}}>professional amateur <a style={{marginLeft: "8px"}} href="/media" target="_blank" rel="noopener noreferrer"> photographer</a></div>
+            <div className="simplifiedLine" style={{fontSize: "15px"}}>professional amateur&nbsp;<a href="/media" target="_blank" rel="noopener noreferrer">photographer</a></div>
             <div className="simplifiedLine" style={{fontSize: "15px"}}>budget travel addict</div>
-
+            <div className="simplifiedSocialIcons">
+              <FiLinkedin style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openLinkedIn}/>
+              <FiGithub style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openGitHub}/>
+              <SiDevpost style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openDevpost}/>
+            </div>
+          </div>
+          {/* <div className="simplifiedLines">
             <div className="simplifiedLineBold" style={{fontSize: "15px"}}>Java • Python • JavaScript • TypeScript • C++ • C# • C • HTML • CSS • MySQL • Swift</div>
             <div className="simplifiedLineBold" style={{fontSize: "15px"}}>React • Node • LangChain • PyTorch • Pandas • NumPy • OpenCV • Whisper • Pixi • Scikit-Learn • Junit • TailwindCSS</div>
             <div className="simplifiedLineBold" style={{fontSize: "15px"}}>Git • AWS EC2 & S3 • Docker • Cursor • Jupyter Notebook • Jira/Confluence • Figma • Tableau • SVN • ArcGIS • Unity • Blender • Android Studio • XCode</div>
-          </div>
+          </div> */}
         </div>
         
         <div className="simplifiedRightBox">
@@ -73,7 +92,7 @@ function AboutMeSimplified() {
 
             <TimelineElement 
               date="jan 2024 -> present"
-              text='programmatically compiling datasets to help researchers identify socioeconomic outliers in geospatial data with the <a href="https://friendlycities.gatech.edu/" target="_blank" rel="noopener noreferrer">friendly cities research lab</a>'
+              text='programmatically compiling datasets and creating visualization tools to help researchers identify socioeconomic outliers in geospatial data with the <a href="https://friendlycities.gatech.edu/" target="_blank" rel="noopener noreferrer">friendly cities research lab</a>'
             />
 
 

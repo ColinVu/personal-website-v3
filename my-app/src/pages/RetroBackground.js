@@ -17,6 +17,40 @@ const RetroBackground = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
+    // Simple black background
+    const animate = () => {
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      if (canvas) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    };
+  }, []);
+
+  /* ========== COMMENTED OUT CODE - TO BE RE-ADDED LATER ========== */
+  /*
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
     // City buildings data
     const buildings = [];
     const streetLights = [];
@@ -290,6 +324,8 @@ const RetroBackground = () => {
       }
     };
   }, []);
+  */
+  /* ========== END COMMENTED CODE ========== */
 
   return (
     <div className="retro-background">

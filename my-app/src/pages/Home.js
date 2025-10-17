@@ -5,6 +5,7 @@ import TypeWriterText from "./TypeWriterText.js";
 import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
 import { RiHomeLine } from "react-icons/ri";
+import { SiDevpost } from "react-icons/si";
 import { FiClipboard, FiCheck } from 'react-icons/fi';
 import Timeline from "./Timeline.js";
 import { useNavigate } from "react-router-dom";
@@ -154,6 +155,10 @@ function Home() {
     window.open('https://www.linkedin.com/in/colin-vu/', '_blank');
   }
 
+  const openDevpost = () => {
+    window.open('https://devpost.com/colinhvu', '_blank');
+  }
+
   const viewHighlights = () => {
     if (highlightsP1.current) {
       highlightsP1.current.scrollIntoView({behavior: "smooth"});
@@ -246,6 +251,7 @@ function Home() {
           <div className="highlightIcons">
             <FiLinkedin style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openLinkedIn}/>
             <FiGithub style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openGitHub}/>
+            <SiDevpost style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={openDevpost}/>
             <div
               className="emailText icon-hover"
               style={{ textDecoration: 'underline' }}

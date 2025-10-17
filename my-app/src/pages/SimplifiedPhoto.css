@@ -13,6 +13,7 @@
   object-fit: cover;
   position: relative;
   z-index: 1;
+  margin-left: 80px;
 }
 
 .tape1 {
@@ -24,6 +25,7 @@
   z-index: 2;
   transform: rotate(-35deg);
   opacity: 0.9;
+  margin-left: 80px;
 }
 
 .tape2 {
