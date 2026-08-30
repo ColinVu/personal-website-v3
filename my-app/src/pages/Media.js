@@ -17,6 +17,11 @@ function Media() {
   const ROWS_PER_PAGE = 3;
   const [galleryPage, setGalleryPage] = useState(0);
 
+  useEffect(() => {
+    document.body.classList.add('mediaBody');
+    return () => document.body.classList.remove('mediaBody');
+  }, []);
+
   // List of all images in the mediaImages folder
   const imageNum = 80;
   const imageList = Array.from({ length: imageNum }, (_, i) => `photo-${imageNum - i}.jpg`);

@@ -5,6 +5,11 @@ html, body {
   overflow: hidden;
 }
 
+body.mediaBody {
+  background-color: #000;
+  color: white;
+}
+
 .mediaPage {
   background-color: #000;
   height: 100vh;

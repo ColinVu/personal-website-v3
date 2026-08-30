@@ -56,6 +56,11 @@ html, body {
   overflow-y: auto;
 }
 
+body.aboutMeBody {
+  background-color: #ffffff;
+  color: #000000;
+}
+
 .aboutMeSimplifiedPage {
   background-color: #f8f8f8;
   background-image: 

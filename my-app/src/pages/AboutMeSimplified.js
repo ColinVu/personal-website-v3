@@ -10,6 +10,11 @@ import SimplifiedPhoto from './SimplifiedPhoto';
 
 function AboutMeSimplified() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.classList.add('aboutMeBody');
+    return () => document.body.classList.remove('aboutMeBody');
+  }, []);
   
   const goHome = () => {
     navigate("/");
@@ -40,8 +45,7 @@ function AboutMeSimplified() {
           <div className="simplifiedLines">
             <div className="simplifiedLineBold" style={{fontSize: "30px"}}>Hi, I'm Colin</div>
             <div className="simplifiedLineBold">computer science @ georgia tech</div>
-            <div className="simplifiedLine" style={{fontSize: "15px"}}>media & computer simulation</div>
-            <div className="simplifiedLine" style={{fontSize: "15px"}}>industrial design minor</div>
+            <div className="simplifiedLine" style={{fontSize: "15px"}}>ui & computer vision</div>
             <div className="simplifiedLine" style={{fontSize: "15px"}}>duck enthusiast</div>
             <div className="simplifiedLine" style={{fontSize: "15px"}}>professional amateur&nbsp;<a href="/media" target="_blank" rel="noopener noreferrer">photographer</a></div>
             <div className="simplifiedLine" style={{fontSize: "15px"}}>budget travel addict</div>
@@ -61,41 +65,41 @@ function AboutMeSimplified() {
         <div className="simplifiedRightBox">
           <div className="simplifiedTimeline">
             <TimelineElement 
-              date="june 2004"
-              text="i became"
+              date="aug 2025 -> present"
+              text='training robots to segment and classify objects with the <a href="https://ccg.gatech.edu/index.php?title=Main_Page" target="_blank" rel="noopener noreferrer">contextual computing group</a>'
             />
-
             <TimelineElement 
-              date="aug 2022"
-              text="arrived at georgia tech"
+              date="june 2026 -> aug 2026"
+              text='frontend software engineering at <a href="https://www.talos.com/" target="_blank" rel="noopener noreferrer">talos trading</a>'
             />
-
-            <TimelineElement 
-              date="june 2023 -> aug 2023"
-              text='i taught <a href="https://www.linkedin.com/company/galileo-learning/" target="_blank" rel="noopener noreferrer">engineering classes</a> to small children it was pretty fun'
-            />
-
-            <TimelineElement 
-              date="aug 2023 -> dec 2024"
-              text="climate innovations research group @ georgia tech research institute. worked on a project using satellite data analysis models to monitor cropland conditions in ukraine. also worked on a project identifying weighted vehicle miles (VMT) in atlanta"
-            />
-
-            <TimelineElement 
-              date="may 2024 -> aug 2024"
-              text='software engineering intern @ <a href="https://www.linkedin.com/company/american-gaming-systems" target="_blank" rel="noopener noreferrer">american gaming systems</a>, built an internal tool to allow users to dynamically and iteratively create low/no code slot machine games ready to ship to casinos'
-            />
-
-            <TimelineElement 
-              date="april 2025 -> aug 2025"
-              text='founding engineer @ <a href="https://www.seraphineglass.com/" target="_blank" rel="noopener noreferrer">seraphine glass</a>, built augmented reality glasses with a seamlessly integrated remembrance agent / lifestyle manager. raised $155k in pre-seed'
-            />
-
             <TimelineElement 
               date="jan 2024 -> present"
               text='programmatically compiling datasets and creating visualization tools to help researchers identify socioeconomic outliers in geospatial data with the <a href="https://friendlycities.gatech.edu/" target="_blank" rel="noopener noreferrer">friendly cities research lab</a>'
             />
-
-
+            <TimelineElement 
+              date="april 2025 -> aug 2025"
+              text='founding engineer @ <a href="https://www.seraphineglass.com/" target="_blank" rel="noopener noreferrer">seraphine glass</a>, built augmented reality glasses with a seamlessly integrated remembrance agent / lifestyle manager. raised $155k in pre-seed'
+            />
+            <TimelineElement 
+              date="may 2024 -> aug 2024"
+              text='software engineering intern @ <a href="https://www.linkedin.com/company/american-gaming-systems" target="_blank" rel="noopener noreferrer">american gaming systems</a>, built an internal tool to allow users to dynamically and iteratively create low/no code slot machine games ready to ship to casinos'
+            />
+            <TimelineElement 
+              date="aug 2023 -> dec 2024"
+              text="climate innovations research group @ georgia tech research institute. worked on a project using satellite data analysis models to monitor cropland conditions in ukraine. also worked on a project identifying weighted vehicle miles (VMT) in atlanta"
+            />
+            <TimelineElement 
+              date="june 2023 -> aug 2023"
+              text='i taught <a href="https://www.linkedin.com/company/galileo-learning/" target="_blank" rel="noopener noreferrer">engineering classes</a> to small children it was pretty fun'
+            />
+            <TimelineElement 
+              date="aug 2022"
+              text="arrived at georgia tech"
+            />
+            <TimelineElement 
+              date="june 2004"
+              text="i became"
+            />
           </div>
         </div>
       </div>

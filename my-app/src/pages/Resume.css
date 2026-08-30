@@ -1,0 +1,33 @@
+.resumePage {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.resumePage .homeButton {
+  position: fixed;
+  top: 2vh;
+  left: 2vh;
+  z-index: 10;
+  color: #222;
+  background: rgba(248, 248, 248, 0.85);
+  border-radius: 50%;
+  padding: 0.6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resumePage .homeButton:hover {
+  opacity: 0.7;
+}
+
+.resumeViewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}

@@ -1,47 +1,50 @@
-
-import React, { useState, useRef, useEffect } from 'react';
-import { RiHomeLine, RiCloseLine } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
-import RetroBackground from './RetroBackground';
+import React, { useState, useEffect } from 'react';
+import { RiHomeLine, RiCloseLine } from 'react-icons/ri';
+import { useNavigate } from 'react-router-dom';
 import './Projects.css';
 
-const projects = [
-//   {
-//     id: 'project-alpha',
-//     image: '/mediaImages/photo-1.jpg',
-//     title: 'Project Alpha',
-//     date: 'March 2024',
-//     links: [
-//       { name: 'Live Demo', url: 'https://project-alpha.demo' },
-//       { name: 'GitHub', url: 'https://github.com/user/project-alpha' }
-//     ],
-//     description: `
-//       This is a description for <strong>Project Alpha</strong>. It is a cool project that does amazing things with technology and creativity. 
-//       You can now use <em>HTML formatting</em> in descriptions!
-      
-//       <br>
-      
-//       Features include:
-//       <ul>
-//         <li><strong>Bold text</strong> for emphasis</li>
-//         <li><em>Italic text</em> for subtle emphasis</li>
-//         <li><a href="https://example.com" target="_blank">Clickable links</a></li>
-//         <li><code>Inline code</code> for technical terms</li>
-//       </ul>
-      
-//       <br>
-      
-//       You can also add code blocks:
-//       <pre><code>function example() {
-//   console.log("Hello World!");
-// }</code></pre>
-//     `,
-//     images: [
-//       '/mediaImages/photo-1.jpg',
-//       '/mediaImages/photo-2.jpg',
-//       '/mediaImages/photo-3.jpg'
-//     ]
-//   },
+export const projects = [
+  {
+    id: 'symbiotic-ai',
+    image: '/projectImages/questionmark.jpg',
+    title: 'Symbiotic AI',
+    minititle: 'SymbAI',
+    date: 'August 2025 - Present',
+    links: [
+    ],
+    description: `
+      In progress...
+      <br>
+      <ul>
+        <li>Segmenting egocentric video using HTK (Hidden Markov Model Toolkit) based on Mediapipe features and DINOv2 embeddings</li>
+        <li>Classifying objects from segmented videos with weak supervision by embedding frames with CLIP and sorting segments using simulated annealing</li>
+      </ul>
+    `,
+    images: [
+    ],
+  },
+  {
+    id: 'factxis',
+    image: '/projectImages/questionmark.jpg',
+    title: 'Factxis: Percentile-Based Visualization',
+    minititle: 'Factxis',
+    date: 'August 2025 - Present',
+    links: [
+      { name: 'Link', url: 'https://colinvu.github.io/percentile-based-viz/' }
+    ],
+    description: `
+      In progress...
+      <br>
+      <ul>
+        <li>Developing a tool for visualizing datasets, focused on percentiles</li>
+        <li>Integration with maps, custom datasets, filtering, etc.</li>
+        <li>Conducted a IRB study to validate the tool's effectiveness</li>
+      </ul>
+    `,
+    images: [
+      '/projectImages/factxisui.png',
+    ],
+  },
   {
     id: 'the-kick-is-good',
     image: '/projectImages/kickfootball.jpg',
@@ -51,7 +54,7 @@ const projects = [
     links: [
       { name: 'Devpost', url: 'https://devpost.com/software/the-kick-is-good' },
       { name: 'GitHub', url: 'https://github.com/ColinVu/FGtracking' },
-      { name: 'Video', url: 'https://youtu.be/Ugg36PxM_qI' }
+      { name: 'Video', url: 'https://youtu.be/Ugg36PxM_qI' },
     ],
     description: `
       Built a program to track a football during broadcast footage of field goal to find the exact height and distance throughout its trajectory.
@@ -63,9 +66,9 @@ const projects = [
         <li>Auto-detects thousands of features and uses them to adjust for changes in camera zoom</li>
       </ul>
     `,
-      images: [
+    images: [
       '/projectImages/kickvid.gif',
-    ]
+    ],
   },
   {
     id: 'big-daddy',
@@ -76,7 +79,7 @@ const projects = [
     links: [
       { name: 'Devpost', url: 'https://devpost.com/software/big-daddy' },
       { name: 'GitHub', url: 'https://github.com/whackamadoodle3000/Big-Daddy' },
-      { name: 'Video', url: 'https://youtu.be/06fpzJV7ULc' }
+      { name: 'Video', url: 'https://youtu.be/06fpzJV7ULc' },
     ],
     description: `
       Built an intelligent browser wrapper that supports students during online learning by integrating real-time emotional and activity analysis.
@@ -89,11 +92,11 @@ const projects = [
         <li>Generated session reports with <strong>Gemini 2.5 Pro</strong> based on activity logs</li>
       </ul>
     `,
-      images: [
+    images: [
       '/projectImages/bigdaddydistraction.png',
       '/projectImages/bigdaddypraise.png',
       '/projectImages/bigdaddyemotion.png',
-    ]
+    ],
   },
   {
     id: 'county-buddy',
@@ -103,7 +106,7 @@ const projects = [
     date: 'Jan. 2025 - July 2025',
     links: [
       { name: 'Paper', url: ' https://doi.org/10.7910/DVN/V7LNJK' },
-      { name: 'GitHub', url: 'https://github.com/ColinVu/CountyBuddy' }
+      { name: 'GitHub', url: 'https://github.com/ColinVu/CountyBuddy' },
     ],
     description: `
       Published a geospatial dataset to support socio-economic research by aggregating and filtering special population data at the U.S. county and census tract levels.
@@ -113,10 +116,10 @@ const projects = [
         <li>Applied statistical thresholding for outlier detection</li>
       </ul>
     `,
-      images: [
+    images: [
       '/projectImages/countybuddymap.png',
-      '/projectImages/countybuddyscatter.png'
-    ]
+      '/projectImages/countybuddyscatter.png',
+    ],
   },
   {
     id: 'nba-outcome-modeling',
@@ -126,7 +129,7 @@ const projects = [
     date: 'March 2025 - April 2025',
     links: [
       { name: 'GitHub', url: 'https://github.com/katamyra/NBA-Outcome-Modeling' },
-      { name: 'PDF', url: '/NBAOutcomeModeling.pdf' }
+      { name: 'PDF', url: '/NBAOutcomeModeling.pdf' },
     ],
     description: `
       Built ML models to predict NBA game point totals for Over–Under sports betting, leveraging historical stats and betting data.
@@ -138,9 +141,9 @@ const projects = [
         <li>Achieved best performance (MSE = 369.38) with a 5-layer fully connected neural network</li>
       </ul>
     `,
-      images: [
-      '/projectImages/nbachart.png'
-    ]
+    images: [
+      '/projectImages/nbachart.png',
+    ],
   },
   {
     id: 'vmt-tracker',
@@ -149,7 +152,7 @@ const projects = [
     minititle: 'VMT Tracker',
     date: 'Jan. 2024 - May 2024',
     links: [
-      { name: 'GitHub', url: 'https://github.com/ColinVu/vmt-cross-reference' }
+      { name: 'GitHub', url: 'https://github.com/ColinVu/vmt-cross-reference' },
     ],
     description: `
       Created a <strong>Geographic Weighted Regression algorithm (GWR)</strong> and visual tool to analyze georeferenced changes in emissions in the Atlanta area.
@@ -160,8 +163,7 @@ const projects = [
         <li>Compiled and visualized <strong>Department of Transportation (DOT)</strong> data</li>
       </ul>
     `,
-      images: [
-    ]
+    images: [],
   },
   {
     id: 'fake-news-detection-model',
@@ -170,7 +172,7 @@ const projects = [
     minititle: 'Fake News Detection Model',
     date: 'June 2023 - July 2023',
     links: [
-      { name: 'GitHub', url: 'https://github.com/ColinVu/fake-news-detection-model' }
+      { name: 'GitHub', url: 'https://github.com/ColinVu/fake-news-detection-model' },
     ],
     description: `
       Developed a language model to find the likelihood of a news article being fake news.
@@ -181,8 +183,7 @@ const projects = [
         <li>Achieved a final model confidence interval of <strong>97%</strong></li>
       </ul>
     `,
-      images: [
-    ]
+    images: [],
   },
   {
     id: 'vuzix-dev-platform',
@@ -191,7 +192,7 @@ const projects = [
     minititle: 'Vuzix Development Platform',
     date: 'July 2025',
     links: [
-      { name: 'GitHub', url: 'https://github.com/ColinVu/vuzixdisplayplatform' }
+      { name: 'GitHub', url: 'https://github.com/ColinVu/vuzixdisplayplatform' },
     ],
     description: `
       Built a React-based canvas editor using <strong>react-konva</strong> that allows users to create animated visualizations for the Vuzix Z100 AR glasses.
@@ -203,8 +204,8 @@ const projects = [
     `,
     images: [
       '/projectImages/vuzixdisplay.png',
-      '/projectImages/vuzixjob.jpg'
-    ]
+      '/projectImages/vuzixjob.jpg',
+    ],
   },
   {
     id: 'prithvi',
@@ -213,7 +214,7 @@ const projects = [
     minititle: 'GeoAI Research',
     date: 'August 2023 - December 2023',
     links: [
-      { name: 'PDF', url: '/geo_ai_technologies.docx.pdf' }
+      { name: 'PDF', url: '/geo_ai_technologies.docx.pdf' },
     ],
     description: `
       Researched and analyzed how NASA/IBM’s Prithvi model could be used to model land use outcomes in Ukraine post-war.
@@ -223,8 +224,7 @@ const projects = [
         <li>Received an official <strong>Request of Information</strong> from the Federal Register to document the work for public policy surrounding post-war redevelopment</li>
       </ul>
     `,
-    images: [
-    ]
+    images: [],
   },
   {
     id: 'crossing-toad',
@@ -233,7 +233,7 @@ const projects = [
     minititle: 'Crossing Toad',
     date: 'Jan. 2023 - May 2023',
     links: [
-      { name: 'GitHub', url: 'https://github.com/ColinVu/Crossing-Toad' }
+      { name: 'GitHub', url: 'https://github.com/ColinVu/Crossing-Toad' },
     ],
     description: `
       Led a team to build an Android Crossy Road clone with smart enemy seeking and collision mechanics.
@@ -243,8 +243,7 @@ const projects = [
         <li>Created architecture and physics engine</li>
       </ul>
     `,
-      images: [
-    ]
+    images: [],
   },
   {
     id: 'lock-in',
@@ -253,7 +252,7 @@ const projects = [
     minititle: 'lock in',
     date: 'March 2025',
     links: [
-      { name: 'GitHub', url: 'https://github.com/ColinVu/chaewon-tells-you-to-lock-in' }
+      { name: 'GitHub', url: 'https://github.com/ColinVu/chaewon-tells-you-to-lock-in' },
     ],
     description: `
       i was having trouble not doom scrolling on instagram reels and i saw a reel of chaewon telling me to lock in so overnight i coded an android app that gives you a pop-up of the video when you're scrolling for too long at a time
@@ -263,8 +262,7 @@ const projects = [
         <li>uses a sliding window to gauge productivity</li>
       </ul>
     `,
-    images: [
-    ]
+    images: [],
   },
   {
     id: 'snowman-armageddon',
@@ -273,7 +271,7 @@ const projects = [
     minititle: 'Snowman Armageddon',
     date: 'April 2024',
     links: [
-      { name: 'GitHub', url: 'https://github.com/huangkatherine7/graphics-final-project' }
+      { name: 'GitHub', url: 'https://github.com/huangkatherine7/graphics-final-project' },
     ],
     description: `
     they're coming...
@@ -286,42 +284,17 @@ const projects = [
       </ul>
     `,
     images: [
-      '/projectImages/snowmen.png'
-    ]
-  }
+      '/projectImages/snowmen.png',
+    ],
+  },
 ];
 
 function Projects() {
   const navigate = useNavigate();
-  const [selected, setSelected] = useState(0);
   const [expandedImage, setExpandedImage] = useState(null);
-  const descriptionsRef = useRef(null);
-  
+
   const goHome = () => {
-    navigate("/");
-  };
-
-  const scrollToProject = (projectId) => {
-    const element = document.getElementById(projectId);
-    if (element && descriptionsRef.current) {
-      const container = descriptionsRef.current;
-      const elementTop = element.offsetTop;
-      const containerTop = container.scrollTop;
-      const containerHeight = container.clientHeight;
-      
-      // Calculate the scroll position with 30px extra padding
-      const scrollPosition = elementTop - 70;
-      
-      container.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const handleProjectClick = (index, projectId) => {
-    setSelected(index);
-    scrollToProject(projectId);
+    navigate('/');
   };
 
   const handleImageClick = (imageSrc) => {
@@ -332,7 +305,6 @@ function Projects() {
     setExpandedImage(null);
   };
 
-  // Handle escape key to close expanded image
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape' && expandedImage) {
@@ -344,58 +316,45 @@ function Projects() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [expandedImage]);
 
+  useEffect(() => {
+    document.body.classList.add('projectsBody');
+    return () => document.body.classList.remove('projectsBody');
+  }, []);
+
   return (
     <div className="projectsPage">
-      <RetroBackground />
-      <div className="homeButton">
-        <RiHomeLine style={{width: "4vh", height: "4vh", cursor: "pointer"}} onClick={goHome}/>
-      </div>
-      <div className="projectsContainer">
-        <div className="projectsList">
-          {projects.map((proj, idx) => (
-            <div
-              key={proj.title}
-              className={`projectIconBox${selected === idx ? ' selected' : ''}`}
-              onClick={() => handleProjectClick(idx, proj.id)}
-            >
-              <img
-                src={proj.image}
-                alt={proj.minititle}
-                className="projectIcon"
-                style={{
-                  width: selected === idx ? '90px' : '70px',
-                  height: selected === idx ? '70px' : '54px',
-                  transition: 'all 0.2s cubic-bezier(0.4,0,0.2,1)',
-                  borderRadius: '4px',
-                  border: selected === idx ? '2.5px solid #ffffff' : '1.5px solid #ccc',
-                  boxShadow: selected === idx ? '0 4px 16px rgba(255,127,95,0.12)' : 'none',
-                  background: '#fff',
-                  objectFit: 'cover',
-                  marginBottom: '8px',
-                  cursor: 'pointer',
-                }}
-              />
-              <div className="projectTitle" style={{fontWeight: selected === idx ? 'bold' : 'normal'}}>{proj.minititle}</div>
-            </div>
-          ))}
-        </div>
-        <div className="projectDescriptionPane" ref={descriptionsRef}>
+      <header className="projectsTopBar">
+        <button type="button" className="projectsHomeButton" onClick={goHome} aria-label="Go home">
+          <RiHomeLine />
+        </button>
+      </header>
+
+      <section className="projectsHero" aria-label="Projects">
+        <h1 className="projectsHeroTitle">Projects and Research</h1>
+      </section>
+
+      <main className="projectsContent">
+        <div className="projectsContentInner">
+          <div className="projectsList">
           {projects.map((proj) => (
-            <div key={proj.id} id={proj.id} className="projectDescriptionSection">
-              <div className="projectDescriptionTopBar">
-                <div className="projectDescriptionTopBarLeft">
-                  <div className="projectDescriptionTitle">{proj.title}</div>
-                  <div className="projectDescriptionDate">{proj.date}</div>
-                </div>
-                <div className="projectDescriptionTopBarRight">
-                  <div className="projectDescriptionLinks">
+            <article key={proj.id} id={proj.id} className="timelineCard">
+              <div className="timelineCardHeader">
+                <img
+                  src={proj.image}
+                  alt={proj.minititle}
+                  className="timelineCardThumb"
+                />
+                <div className="timelineCardMeta">
+                  <h2 className="timelineCardTitle">{proj.title}</h2>
+                  <p className="timelineCardDate">{proj.date}</p>
+                  <div className="timelineCardLinks">
                     {proj.links.map((link, index) => (
-                      <a 
+                      <a
                         key={index}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="projectLink"
+                        className="timelineCardLink"
                       >
                         {link.name}
                       </a>
@@ -403,33 +362,35 @@ function Projects() {
                   </div>
                 </div>
               </div>
-              <div 
-                className="projectDescriptionText" 
+
+              <div
+                className="timelineCardDescription"
                 dangerouslySetInnerHTML={{ __html: proj.description }}
               />
+
               {proj.images && proj.images.length > 0 && (
-                <div className="projectImages">
+                <div className="timelineCardImages">
                   {proj.images.map((image, index) => (
                     <img
                       key={index}
                       src={image}
                       alt={`${proj.title} - Image ${index + 1}`}
-                      className="projectImage"
+                      className="timelineCardImage"
                       onClick={() => handleImageClick(image)}
                     />
                   ))}
                 </div>
               )}
-            </div>
+            </article>
           ))}
+          </div>
         </div>
-      </div>
+      </main>
 
-      {/* Full-screen image modal */}
       {expandedImage && (
         <div className="imageModal" onClick={closeExpandedImage}>
           <div className="imageModalContent" onClick={(e) => e.stopPropagation()}>
-            <button className="imageModalClose" onClick={closeExpandedImage}>
+            <button type="button" className="imageModalClose" onClick={closeExpandedImage} aria-label="Close image">
               <RiCloseLine />
             </button>
             <img

@@ -5,6 +5,7 @@ import Media from "./pages/Media";
 import Projects from "./pages/Projects";
 import AboutMe from "./pages/AboutMe";
 import AboutMeSimplified from "./pages/AboutMeSimplified";
+import Resume from "./pages/Resume";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/projects" element={<Projects/>} />
         {/* {<Route path="/aboutme" element={<AboutMe/>} />} */}
         <Route path="/aboutme" element={<AboutMeSimplified/>} />
+        <Route path="/resume" element={<Resume/>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

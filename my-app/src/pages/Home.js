@@ -131,8 +131,8 @@ function Home() {
     setMousePosition({ x: e.clientX, y: e.clientY });
   };
 
-  const downloadResume = () => {
-    window.open('/resume.pdf', '_blank');
+  const goToResume = () => {
+    navigate("/resume");
   }
 
   const goToAboutMe = () => {
@@ -189,7 +189,7 @@ function Home() {
       const timer = setTimeout(() => {
         setAnimationActive(false);
         if (currIcon == "scroll") {
-          downloadResume();
+          goToResume();
         } else if (currIcon == "camera") {
           goToMedia();
         } else if (currIcon == "wrench") {
@@ -267,6 +267,7 @@ function Home() {
                 )}
               </div>
             </div>
+            <span className="updatedText">Updated August 2026</span>
           </div>
         </div>
       }
